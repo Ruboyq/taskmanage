@@ -1,0 +1,30 @@
+# 在这里编写springboot的配置信息
+spring:
+  datasource:
+    url: jdbc:mysql://39.106.43.194:3306/classwork?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
+    username: root
+    password: youjiangping666
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  http:
+    encoding:
+      force: true
+      charset: utf-8
+      enabled: true
+mybatis:
+  # 实体类扫描
+  type-aliases-package: software.service.taskmanage.domain
+  # 配置映射文件位置
+  mapper-locations: classpath:mapper/*.xml
+  # 开启驼峰匹配
+  mapUnderscoreToCamelCase: true
+logging:
+  level:
+    software:
+      service:
+        taskmanage:
+          domain: debug
+server:
+  port: 9777
+  tomcat:
+    uri-encoding: utf-8
